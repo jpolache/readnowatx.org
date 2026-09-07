@@ -135,6 +135,11 @@ nav ul ul a {
 /* Hero Section */
 .hero {
   background-color: var(--primary);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('images/RN-banner2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--white);
   padding: 4rem 1rem;
   text-align: center;
