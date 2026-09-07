@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register as a Read Now student">
+  <title>Student Registration - Read Now</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <a href="/" class="logo"><img src="images/logo.png" alt="Read Now"></a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="about.html">About Us</a><ul><li><a href="contact.html">Contact Us</a></li></ul></li>
+        <li><a href="volunteer.html">Volunteers</a><ul><li><a href="volunteer-application.html">Application</a></li><li><a href="code-of-conduct.html">Code of Conduct</a></li></ul></li>
+        <li><a href="students.html">Students</a><ul><li><a href="student-registration.html">Registration</a></li><li><a href="faq.html">FAQ</a></li></ul></li>
+        <li><a href="https://givewp.com" target="_blank" class="donate-btn">Donate</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <h1>Student Registration</h1>
+    <p>Prospective Student Application</p>
+  </div>
+</section>
+
+<div class="container">
+
+<p style="background-color: #fff3cd; padding: 1rem; border-radius: 4px; border-left: 4px solid #ffc107; margin-bottom: 2rem;">
+  <strong>Note:</strong> Fields marked with <span class="required">*</span> are required. Please complete these fields.
+</p>
+
+<div class="form-container">
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+    <div class="form-section">
+      <h3>Student Representative Information</h3>
+      <p>If there is anything you would like to add, please note it only in the boxes provided below.</p>
+
+      <div class="form-group">
+        <label for="representative">Who should Read Now contact? <span class="required">*</span></label>
+        <select id="representative" name="Who to Contact" required>
+          <option value="">-- Please choose an option --</option>
+          <option value="Student">The student</option>
+          <option value="Parent/Guardian">Parent or Guardian</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="rep_name">Representative Name <span class="required">*</span></label>
+        <input type="text" id="rep_name" name="Representative Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="home_phone">Home Phone <span class="required">*</span></label>
+        <input type="tel" id="home_phone" name="Home Phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="reach_frequency">When is the best day and time to reach you? <span class="required">*</span></label>
+        <select id="reach_frequency" name="Best Time to Reach" required>
+          <option value="">-- Please choose an option --</option>
+          <option value="Morning">Morning (8am-12pm)</option>
+          <option value="Afternoon">Afternoon (12pm-5pm)</option>
+          <option value="Evening">Evening (5pm-9pm)</option>
+          <option value="Weekends">Weekends</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>Prospective Student Application</h3>
+      <p>All fields in this section are required. Please complete these fields.</p>
+
+      <div class="form-group">
+        <label for="student_name">Student Name <span class="required">*</span></label>
+        <input type="text" id="student_name" name="Student Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="firstname_add">If there is anything else you would like to add, please note it below. You may add it here:</label>
+        <textarea id="firstname_add" name="Student Additional Info"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">I / name <span class="required">*</span></label>
+        <select id="lastname" name="Student Type" required>
+          <option value="">-- Please choose an option --</option>
+          <option value="Adult">Am an adult seeking reading help</option>
+          <option value="Teen">Am a teenager seeking reading help</option>
+          <option value="Parent">Am a parent seeking help for my child</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="student_phone">Home Phone <span class="required">*</span></label>
+        <input type="tel" id="student_phone" name="Student Phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="student_email">Email <span class="required">*</span></label>
+        <input type="email" id="student_email" name="Student Email" required>
+      </div>
+
+      <div class="form-group">
+        <label>I agree to be contacted by Read Now to determine eligibility to become a Read Now student. <span class="required">*</span></label>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="Contact Consent" value="Yes" required>
+            Yes, I agree to be contacted
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="signature">Signature <span class="required">*</span></label>
+        <input type="text" id="signature" name="Signature" placeholder="Type your name as signature" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date (MM/DD/YY) <span class="required">*</span></label>
+        <input type="text" id="date" name="Date" placeholder="MM/DD/YY" required>
+      </div>
+    </div>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</div>
+
+<p style="text-align: center; font-size: 0.95rem; margin-top: 2rem;">
+  Thank you for taking the first step in becoming a Read Now student!
+</p>
+
+<p style="text-align: center; font-style: italic; color: #666; margin-top: 2rem;">
+  <strong>Note:</strong> Replace YOUR_FORM_ID in the form action with your Formspree form ID
+</p>
+
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section"><h3>Quick Links</h3><ul><li><a href="about.html">About Us</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="students.html">Students</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-section"><h3>Contact</h3><div class="footer-contact"><span>📞 <a href="tel:+15128504931">512-850-4931</a></span></div><div class="footer-contact"><span>✉️ <a href="mailto:info@readnowatx.org">info@readnowatx.org</a></span></div></div>
+    <div class="footer-section"><h3>Organization</h3><p>Read Now is a 501(c)(3) nonprofit organization dedicated to providing free adult literacy tutoring in Austin, Texas.</p></div>
+  </div>
+  <div class="footer-bottom"><div class="knowbility-logo"><p><strong>Accessibility Partner</strong></p><p>Read Now partners with <a href="https://knowbility.org" target="_blank">Knowbility</a> to ensure accessibility.</p></div><p>&copy; 2026 Read Now. All rights reserved.</p></div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

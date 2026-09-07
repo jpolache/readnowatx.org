@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apply to become a Read Now volunteer tutor">
+  <title>Volunteer Application - Read Now</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <a href="/" class="logo"><img src="images/logo.png" alt="Read Now"></a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="about.html">About Us</a><ul><li><a href="contact.html">Contact Us</a></li></ul></li>
+        <li><a href="volunteer.html">Volunteers</a><ul><li><a href="volunteer-application.html">Application</a></li><li><a href="code-of-conduct.html">Code of Conduct</a></li></ul></li>
+        <li><a href="students.html">Students</a><ul><li><a href="student-registration.html">Registration</a></li><li><a href="faq.html">FAQ</a></li></ul></li>
+        <li><a href="https://givewp.com" target="_blank" class="donate-btn">Donate</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <h1>Volunteer Application</h1>
+    <p>Prospective Tutor Application</p>
+  </div>
+</section>
+
+<div class="container">
+
+<p style="background-color: #fff3cd; padding: 1rem; border-radius: 4px; border-left: 4px solid #ffc107; margin-bottom: 2rem;">
+  <strong>Note:</strong> Fields marked with <span class="required">*</span> are required. Please complete these fields.
+</p>
+
+<div class="form-container">
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+    <div class="form-section">
+      <h3>Personal Information</h3>
+
+      <div class="form-group">
+        <label for="applicant_name">Applicant Name <span class="required">*</span></label>
+        <input type="text" id="applicant_name" name="Applicant Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" name="Gender">
+          <option value="">-- Please choose an option --</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Non-Binary">Non-Binary</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="address1">Address Line 1 <span class="required">*</span></label>
+        <input type="text" id="address1" name="Address Line 1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="address2">Address Line 2</label>
+        <input type="text" id="address2" name="Address Line 2">
+      </div>
+
+      <div class="form-group">
+        <label for="city">City <span class="required">*</span></label>
+        <input type="text" id="city" name="City" required>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State <span class="required">*</span></label>
+        <select id="state" name="State" required>
+          <option value="">-- Please choose an option --</option>
+          <option value="TX">Texas</option>
+          <option value="AL">Alabama</option>
+          <option value="AK">Alaska</option>
+          <option value="AZ">Arizona</option>
+          <option value="AR">Arkansas</option>
+          <option value="CA">California</option>
+          <!-- Add more states as needed -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="zip">Zip Code <span class="required">*</span></label>
+        <input type="text" id="zip" name="Zip Code" required>
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Mobile Phone <span class="required">*</span></label>
+        <input type="tel" id="mobile" name="Mobile Phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="home">Home Phone</label>
+        <input type="tel" id="home" name="Home Phone">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" name="Email" required>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>Tutoring Background</h3>
+
+      <div class="form-group">
+        <label for="tutoring_exp">Please describe your previous tutoring and/or teaching experience, if any <span class="required">*</span></label>
+        <textarea id="tutoring_exp" name="Tutoring Experience" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>I would like to become a literacy tutor because: <span class="required">*</span></label>
+        <textarea name="Why Become Tutor" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Add more information about yourself or your background that might be relevant:</label>
+        <textarea name="Additional Information"></textarea>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>Availability & Preferences</h3>
+
+      <div class="form-group">
+        <label for="reach_frequency">When is the best day and time to reach you? <span class="required">*</span></label>
+        <select id="reach_frequency" name="Best Time to Reach" required>
+          <option value="">-- Please choose an option --</option>
+          <option value="Morning">Morning</option>
+          <option value="Afternoon">Afternoon</option>
+          <option value="Evening">Evening</option>
+          <option value="Anytime">Anytime</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="volunteer_type">Read time requirements of volunteer tutors to be on 18 years old, and you will meet regularly with a student: <span class="required">*</span></label>
+        <select id="volunteer_type" name="Volunteer Type" required>
+          <option value="">-- Please choose an option --</option>
+          <option value="Weekly">Weekly commitment</option>
+          <option value="Bi-weekly">Bi-weekly commitment</option>
+          <option value="Flexible">Flexible commitment</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>How did you learn about Read Now?</label>
+        <select name="How Found Read Now">
+          <option value="">-- Please choose an option --</option>
+          <option value="Friend">Friend or family</option>
+          <option value="Website">Website</option>
+          <option value="Social media">Social media</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>Agreement & Consent</h3>
+
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" name="Agree to Code of Conduct" value="Yes" required>
+          I agree to be contacted by Read Now to determine eligibility to become a Read Now tutor. I understand that completing this form does not guarantee acceptance as a Read Now tutor. Read Now reserves the right to refuse any applicant. I agree to the Read Now Volunteer Tutor Code of Conduct and other applicable Read Now policies.
+        </label>
+      </div>
+
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" name="Background Check Consent" value="Yes" required>
+          By signing, electronically in this document, I hereby agree to the Read Now Volunteer Tutor Code of Conduct, acknowledge that I have read and have been made fully aware of the expectations set forth herein, and have fully understood that I will be subject to Read Now administrative approval. I understand that this position is voluntary and can be terminated at any time by either Read Now or myself.
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="signature">Signature <span class="required">*</span></label>
+        <input type="text" id="signature" name="Signature" placeholder="Type your name as signature" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date (MM/DD/YY) <span class="required">*</span></label>
+        <input type="text" id="date" name="Date" placeholder="MM/DD/YY" required>
+      </div>
+    </div>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</div>
+
+<p style="text-align: center; font-style: italic; color: #666; margin-top: 2rem;">
+  <strong>Note:</strong> Replace YOUR_FORM_ID in the form action with your Formspree form ID
+</p>
+
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section"><h3>Quick Links</h3><ul><li><a href="about.html">About Us</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="students.html">Students</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-section"><h3>Contact</h3><div class="footer-contact"><span>📞 <a href="tel:+15128504931">512-850-4931</a></span></div><div class="footer-contact"><span>✉️ <a href="mailto:info@readnowatx.org">info@readnowatx.org</a></span></div></div>
+    <div class="footer-section"><h3>Organization</h3><p>Read Now is a 501(c)(3) nonprofit organization dedicated to providing free adult literacy tutoring in Austin, Texas.</p></div>
+  </div>
+  <div class="footer-bottom"><div class="knowbility-logo"><p><strong>Accessibility Partner</strong></p><p>Read Now partners with <a href="https://knowbility.org" target="_blank">Knowbility</a> to ensure accessibility.</p></div><p>&copy; 2026 Read Now. All rights reserved.</p></div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
