@@ -136,6 +136,92 @@ You need to create 3 forms:
 
 ---
 
+## 📨 Alternative: Self-Hosted Email via GreenGeeks
+
+Formspree above is the recommended approach (no server to maintain). This
+section documents a fallback option in case you ever want to avoid a
+third-party form service and instead use your existing GreenGeeks hosting
+account to send form emails directly.
+
+**How it works:** GitHub Pages only serves static files — it cannot run PHP.
+So this requires keeping one GreenGeeks hosting plan alive (even after
+WordPress itself is retired) purely to host a small PHP script that receives
+the form POST and emails it to `info@readnowatx.org`. The static site's forms
+then point their `action` at that script's URL instead of Formspree.
+
+Note: the mailbox `info@readnowatx.org` itself is unaffected either way — DNS
+MX records control where mail is delivered, independent of where the website
+is hosted. This section is only about how form *submissions* get turned into
+an email.
+
+### 1. PHP handler, hosted on GreenGeeks (e.g. `https://readnowatx.org/mail-handler.php`)
+
+```php
+<?php
+// mail-handler.php
+$allowed_origin = 'https://jpolache.github.io'; // or your custom domain
+header("Access-Control-Allow-Origin: $allowed_origin");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type");
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { exit; } // CORS preflight
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); exit('Method not allowed'); }
+
+// Honeypot: bots fill hidden fields, humans don't
+if (!empty($_POST['_honeypot'])) { exit; }
+
+$to = 'info@readnowatx.org';
+$subject = $_POST['_subject'] ?? 'New website form submission';
+$replyTo = filter_var($_POST['Email'] ?? '', FILTER_VALIDATE_EMAIL);
+
+$body = '';
+foreach ($_POST as $key => $value) {
+    if (str_starts_with($key, '_')) continue; // skip control fields
+    $body .= sprintf("%s: %s\n", $key, is_array($value) ? implode(', ', $value) : $value);
+}
+
+$headers = "From: no-reply@readnowatx.org\r\n";
+if ($replyTo) { $headers .= "Reply-To: $replyTo\r\n"; }
+
+if (mail($to, $subject, $body, $headers)) {
+    header('Location: https://jpolache.github.io/readnowatx.org/thank-you.html');
+} else {
+    http_response_code(500);
+    exit('Failed to send.');
+}
+```
+
+### 2. Form changes needed
+
+Same field names already used in `contact.html`, `volunteer-application.html`,
+and `student-registration.html` — just swap the `action` and add a honeypot
+field plus a subject:
+
+```html
+<form action="https://readnowatx.org/mail-handler.php" method="POST">
+  <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+  <input type="hidden" name="_subject" value="New Volunteer Application">
+  ...
+</form>
+```
+
+### Tradeoffs vs. Formspree
+
+- **Deliverability**: PHP's `mail()` needs correct SPF/DKIM DNS records for
+  `readnowatx.org` or it will land in spam. Using an SMTP library (e.g.
+  PHPMailer) through GreenGeeks' real mail service is more reliable than raw
+  `mail()`.
+- **Spam protection**: no built-in filtering like Formspree — the honeypot
+  above stops basic bots; add hCaptcha/reCAPTCHA for real protection.
+- **CORS**: GitHub Pages and GreenGeeks are different origins, so
+  `Access-Control-Allow-Origin` must exactly match the site's URL.
+- **Maintenance**: you own hosting costs, PHP security patches, and uptime
+  for that script indefinitely, instead of offloading it to Formspree.
+
+Only worth doing if avoiding a third-party dependency is a hard requirement.
+
+---
+
 ## 📋 Site Navigation Structure
 
 The site uses a dropdown navigation matching your WordPress version:
@@ -327,8 +413,9 @@ For content updates or questions about the site structure, refer back to this RE
 
 ## ✅ Migration Checklist
 
-- [ ] Formspree forms set up and tested
-- [ ] All form IDs replaced in HTML files
+- [x] Formspree forms set up (Contact, Volunteer Application, Student Registration)
+- [x] All form IDs replaced in HTML files
+- [ ] Formspree forms tested (test submission received at info@readnowatx.org)
 - [ ] Domain connected to hosting
 - [ ] HTTPS enabled
 - [ ] DNS propagated (wait 24 hours)
