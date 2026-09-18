@@ -3,6 +3,21 @@
 Static HTML, no build step. Publishing = push to `main`; GitHub Pages
 redeploys automatically (~1-2 min).
 
+## One-time setup
+
+Enable the repo's tracked git hooks (keeps the shared header in sync on commit):
+
+    git config core.hooksPath hooks
+
+## Shared header
+
+Every page's `<header>...</header>` is generated from [header.html](header.html).
+To change the nav/logo across the whole site, edit `header.html` only, then
+commit as usual — the `pre-commit` hook runs `scripts/sync-header.js`
+automatically and stages the updated pages for you. To sync manually instead:
+
+    node scripts/sync-header.js
+
 ## Make a change
 
 1. Pull latest:  Source Control panel -> ... -> Pull   (or `git pull`)
