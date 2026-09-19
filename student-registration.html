@@ -82,8 +82,8 @@
       </div>
 
       <div class="form-group">
-        <label for="rep_name">Representative Name</label>
-        <input type="text" id="rep_name" name="Representative Name">
+        <label for="rep_name">Representative Name <span class="required rep-star" hidden>*</span></label>
+        <input type="text" id="rep_name" name="Representative Name" data-rep-required>
         <small class="field-hint">Enter your full name</small>
       </div>
 
@@ -94,14 +94,14 @@
       </div>
 
       <div class="form-group">
-        <label for="rep_phone">Home Phone</label>
-        <input type="tel" id="rep_phone" name="Representative Phone">
+        <label for="rep_phone">Home Phone <span class="required rep-star" hidden>*</span></label>
+        <input type="tel" id="rep_phone" name="Representative Phone" data-rep-required>
         <small class="field-hint">Enter a valid phone number</small>
       </div>
 
       <div class="form-group">
-        <label for="rep_day">When is the best day and time to reach you?</label>
-        <select id="rep_day" name="Representative Best Day" aria-label="Best day to reach you">
+        <label for="rep_day">When is the best day and time to reach you? <span class="required rep-star" hidden>*</span></label>
+        <select id="rep_day" name="Representative Best Day" data-rep-required aria-label="Best day to reach you">
           <option value="">-- Please choose an option --</option>
           <option value="Monday">Monday</option>
           <option value="Tuesday">Tuesday</option>
@@ -112,7 +112,7 @@
           <option value="Sunday">Sunday</option>
         </select>
         <small class="field-hint">Choose one</small>
-        <select id="rep_time" name="Representative Best Time" aria-label="Best time to reach you" style="margin-top: 0.5rem;">
+        <select id="rep_time" name="Representative Best Time" data-rep-required aria-label="Best time to reach you" style="margin-top: 0.5rem;">
           <option value="">-- Please choose an option --</option>
           <option value="Morning (8am-12pm)">Morning (8am-12pm)</option>
           <option value="Afternoon (12pm-5pm)">Afternoon (12pm-5pm)</option>
@@ -240,6 +240,19 @@
   </div>
   <div class="footer-bottom"><div class="knowbility-logo"><p><strong>Accessibility Partner</strong></p><p>Read Now partners with <a href="https://knowbility.org" target="_blank">Knowbility</a> to ensure accessibility.</p></div><p>&copy; 2026 Read Now. All rights reserved.</p></div>
 </footer>
+
+<script>
+  const contactWho = document.getElementById('representative');
+  const repFields = document.querySelectorAll('[data-rep-required]');
+  const repStars = document.querySelectorAll('.rep-star');
+  const syncRepRequired = () => {
+    const needed = contactWho.value === 'Parent or Guardian';
+    repFields.forEach((field) => { field.required = needed; });
+    repStars.forEach((star) => { star.hidden = !needed; });
+  };
+  contactWho.addEventListener('change', syncRepRequired);
+  syncRepRequired();
+</script>
 
 <script src="script.js"></script>
 
