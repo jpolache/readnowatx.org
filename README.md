@@ -236,7 +236,7 @@ Volunteers
 Students
   ├─ Registration
   └─ FAQ
-Donate → (links to GiveWP external)
+Donate → donate.html (Donorbox embed)
 ```
 
 ---
@@ -317,21 +317,9 @@ To improve SEO further:
 
 ## 📊 Donate Link
 
-The "Donate" button currently links to:
-```html
-<a href="https://givewp.com" target="_blank">Donate</a>
-```
-
-**To connect your actual GiveWP donation page:**
-
-1. Go to your GiveWP dashboard
-2. Find your donation form's public URL (usually: `yoursite.com/donate`)
-3. In all `.html` files, replace `https://givewp.com` with your actual GiveWP URL
-
-Example:
-```html
-<a href="https://readnowatx.org/donate" target="_blank">Donate</a>
-```
+The "Donate" nav button (in `header.html`) links to `donate.html`, which embeds the Donorbox
+donation form (campaign `readnow-web`). To change the campaign or widget, edit the
+`<dbox-widget>` snippet in `donate.html`; copy a new snippet from your Donorbox dashboard.
 
 ---
 
@@ -424,7 +412,7 @@ For content updates or questions about the site structure, refer back to this RE
 - [ ] Logo displays correctly
 - [ ] SVG icons load
 - [ ] Mobile menu works
-- [ ] Donate button links to GiveWP
+- [x] Donate button links to donate.html (Donorbox)
 - [ ] Knowbility footer link working
 - [ ] Old WordPress redirects set up (optional but recommended)
 

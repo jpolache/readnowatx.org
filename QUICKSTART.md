@@ -70,12 +70,8 @@ Replace `YOUR_FORM_ID` in these files with your actual Formspree IDs:
 - [ ] View on mobile phone
 - [ ] Test hamburger menu on mobile
 
-### STEP 5: Update GiveWP Donate Link (2 minutes)
-In all HTML files, replace:
-```html
-href="https://givewp.com"
-```
-With your actual GiveWP URL (your GiveWP dashboard shows this)
+### STEP 5: Donations
+The Donate button opens `donate.html`, which embeds the Donorbox form. Nothing to change unless you switch campaigns (edit the `<dbox-widget>` in `donate.html`).
 
 ---
 
