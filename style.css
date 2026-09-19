@@ -280,6 +280,7 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="phone"],
+input[type="tel"],
 input[type="date"],
 select,
 textarea {
@@ -289,6 +290,13 @@ textarea {
   border-radius: 4px;
   font-family: inherit;
   font-size: 1rem;
+}
+
+.field-hint {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #666;
 }
 
 textarea {

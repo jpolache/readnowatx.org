@@ -59,6 +59,8 @@
 
 <div class="container">
 
+<p>Thank you for taking the first step to become a <em>Read Now</em> volunteer. Please read the <em>Read Now</em> <a href="code-of-conduct.html">Code of Conduct</a> before beginning the application.</p>
+
 <p style="background-color: #fff3cd; padding: 1rem; border-radius: 4px; border-left: 4px solid #ffc107; margin-bottom: 2rem;">
   <strong>Note:</strong> Fields marked with <span class="required">*</span> are required. Please complete these fields.
 </p>
@@ -72,22 +74,18 @@
       <div class="form-group">
         <label for="applicant_name">Applicant Name <span class="required">*</span></label>
         <input type="text" id="applicant_name" name="Applicant Name" required>
+        <small class="field-hint">Enter your full name</small>
       </div>
 
       <div class="form-group">
         <label for="gender">Gender</label>
-        <select id="gender" name="Gender">
-          <option value="">-- Please choose an option --</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Non-Binary">Non-Binary</option>
-          <option value="Prefer not to say">Prefer not to say</option>
-        </select>
+        <input type="text" id="gender" name="Gender">
       </div>
 
       <div class="form-group">
-        <label for="address1">Address Line 1 <span class="required">*</span></label>
-        <input type="text" id="address1" name="Address Line 1" required>
+        <label for="address1">Address Line 1</label>
+        <input type="text" id="address1" name="Address Line 1">
+        <small class="field-hint">Enter your street address</small>
       </div>
 
       <div class="form-group">
@@ -98,6 +96,7 @@
       <div class="form-group">
         <label for="city">City <span class="required">*</span></label>
         <input type="text" id="city" name="City" required>
+        <small class="field-hint">Enter your city of residence</small>
       </div>
 
       <div class="form-group">
@@ -110,28 +109,111 @@
           <option value="AZ">Arizona</option>
           <option value="AR">Arkansas</option>
           <option value="CA">California</option>
-          <!-- Add more states as needed -->
+          <option value="CO">Colorado</option>
+          <option value="CT">Connecticut</option>
+          <option value="DE">Delaware</option>
+          <option value="DC">District of Columbia</option>
+          <option value="FL">Florida</option>
+          <option value="GA">Georgia</option>
+          <option value="HI">Hawaii</option>
+          <option value="ID">Idaho</option>
+          <option value="IL">Illinois</option>
+          <option value="IN">Indiana</option>
+          <option value="IA">Iowa</option>
+          <option value="KS">Kansas</option>
+          <option value="KY">Kentucky</option>
+          <option value="LA">Louisiana</option>
+          <option value="ME">Maine</option>
+          <option value="MD">Maryland</option>
+          <option value="MA">Massachusetts</option>
+          <option value="MI">Michigan</option>
+          <option value="MN">Minnesota</option>
+          <option value="MS">Mississippi</option>
+          <option value="MO">Missouri</option>
+          <option value="MT">Montana</option>
+          <option value="NE">Nebraska</option>
+          <option value="NV">Nevada</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NM">New Mexico</option>
+          <option value="NY">New York</option>
+          <option value="NC">North Carolina</option>
+          <option value="ND">North Dakota</option>
+          <option value="OH">Ohio</option>
+          <option value="OK">Oklahoma</option>
+          <option value="OR">Oregon</option>
+          <option value="PA">Pennsylvania</option>
+          <option value="RI">Rhode Island</option>
+          <option value="SC">South Carolina</option>
+          <option value="SD">South Dakota</option>
+          <option value="TN">Tennessee</option>
+          <option value="UT">Utah</option>
+          <option value="VT">Vermont</option>
+          <option value="VA">Virginia</option>
+          <option value="WA">Washington</option>
+          <option value="WV">West Virginia</option>
+          <option value="WI">Wisconsin</option>
+          <option value="WY">Wyoming</option>
         </select>
+        <small class="field-hint">Choose one</small>
       </div>
 
       <div class="form-group">
         <label for="zip">Zip Code <span class="required">*</span></label>
         <input type="text" id="zip" name="Zip Code" required>
+        <small class="field-hint">Enter your zipcode of residence</small>
       </div>
 
       <div class="form-group">
         <label for="mobile">Mobile Phone <span class="required">*</span></label>
         <input type="tel" id="mobile" name="Mobile Phone" required>
+        <small class="field-hint">Enter a valid phone number</small>
       </div>
 
       <div class="form-group">
         <label for="home">Home Phone</label>
         <input type="tel" id="home" name="Home Phone">
+        <small class="field-hint">Enter a valid phone number</small>
       </div>
 
       <div class="form-group">
         <label for="email">Email <span class="required">*</span></label>
         <input type="email" id="email" name="Email" required>
+        <small class="field-hint">Enter a valid email</small>
+      </div>
+
+      <div class="form-group">
+        <label for="best_day">When is the best day and time to reach you? <span class="required">*</span></label>
+        <select id="best_day" name="Best Day to Reach" required aria-label="Best day to reach you">
+          <option value="">-- Please choose an option --</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+        <small class="field-hint">Choose one</small>
+        <select id="best_time" name="Best Time to Reach" required aria-label="Best time to reach you" style="margin-top: 0.5rem;">
+          <option value="">-- Please choose an option --</option>
+          <option value="Morning (8am-12pm)">Morning (8am-12pm)</option>
+          <option value="Afternoon (12pm-5pm)">Afternoon (12pm-5pm)</option>
+          <option value="Evening (5pm-9pm)">Evening (5pm-9pm)</option>
+        </select>
+        <small class="field-hint">Choose one</small>
+      </div>
+
+      <div class="form-group">
+        <label for="how_found">How did you learn about <em>Read Now</em>?</label>
+        <select id="how_found" name="How Found Read Now">
+          <option value="">-- Please choose an option --</option>
+          <option value="Friend or family">Friend or family</option>
+          <option value="Website">Website</option>
+          <option value="Social media">Social media</option>
+          <option value="Other">Other</option>
+        </select>
+        <small class="field-hint">Choose one</small>
       </div>
     </div>
 
@@ -139,83 +221,64 @@
       <h3>Tutoring Background</h3>
 
       <div class="form-group">
-        <label for="tutoring_exp">Please describe your previous tutoring and/or teaching experience, if any <span class="required">*</span></label>
-        <textarea id="tutoring_exp" name="Tutoring Experience" required></textarea>
+        <label for="tutoring_exp">Please describe your previous tutoring and/or teaching experience, if any: <span class="required">*</span></label>
+        <textarea id="tutoring_exp" name="Tutoring Experience" maxlength="500" required></textarea>
+        <small class="field-hint char-count" data-for="tutoring_exp">500 / 500 characters remaining</small>
       </div>
 
       <div class="form-group">
-        <label>I would like to become a literacy tutor because: <span class="required">*</span></label>
-        <textarea name="Why Become Tutor" required></textarea>
-      </div>
-
-      <div class="form-group">
-        <label>Add more information about yourself or your background that might be relevant:</label>
-        <textarea name="Additional Information"></textarea>
+        <label for="why_tutor">I would like to become a literacy tutor because: <span class="required">*</span></label>
+        <textarea id="why_tutor" name="Why Become Tutor" maxlength="500" required></textarea>
+        <small class="field-hint char-count" data-for="why_tutor">500 / 500 characters remaining</small>
       </div>
     </div>
 
     <div class="form-section">
-      <h3>Availability & Preferences</h3>
+      <h3>Agreement &amp; Consent</h3>
 
       <div class="form-group">
-        <label for="reach_frequency">When is the best day and time to reach you? <span class="required">*</span></label>
-        <select id="reach_frequency" name="Best Time to Reach" required>
+        <label for="age_18"><em>Read Now</em> requires all Volunteer Tutors to be age 18 or older. Are you 18 years of age or above? <span class="required">*</span></label>
+        <select id="age_18" name="Age 18 or Older" required>
           <option value="">-- Please choose an option --</option>
-          <option value="Morning">Morning</option>
-          <option value="Afternoon">Afternoon</option>
-          <option value="Evening">Evening</option>
-          <option value="Anytime">Anytime</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
         </select>
-      </div>
-
-      <div class="form-group">
-        <label for="volunteer_type">Read time requirements of volunteer tutors to be on 18 years old, and you will meet regularly with a student: <span class="required">*</span></label>
-        <select id="volunteer_type" name="Volunteer Type" required>
-          <option value="">-- Please choose an option --</option>
-          <option value="Weekly">Weekly commitment</option>
-          <option value="Bi-weekly">Bi-weekly commitment</option>
-          <option value="Flexible">Flexible commitment</option>
-        </select>
+        <small class="field-hint">Choose one</small>
       </div>
 
       <div class="form-group">
-        <label>How did you learn about Read Now?</label>
-        <select name="How Found Read Now">
+        <label for="contact_consent">I agree to be contacted by <em>Read Now</em> to determine eligibility to become a <em>Read Now</em> Volunteer Tutor. <span class="required">*</span></label>
+        <select id="contact_consent" name="Contact Consent" required>
           <option value="">-- Please choose an option --</option>
-          <option value="Friend">Friend or family</option>
-          <option value="Website">Website</option>
-          <option value="Social media">Social media</option>
-          <option value="Other">Other</option>
+          <option value="Yes, I agree">Yes, I agree</option>
+          <option value="No">No</option>
         </select>
-      </div>
-    </div>
-
-    <div class="form-section">
-      <h3>Agreement & Consent</h3>
-
-      <div class="checkbox-group">
-        <label>
-          <input type="checkbox" name="Agree to Code of Conduct" value="Yes" required>
-          I agree to be contacted by Read Now to determine eligibility to become a Read Now tutor. I understand that completing this form does not guarantee acceptance as a Read Now tutor. Read Now reserves the right to refuse any applicant. I agree to the Read Now Volunteer Tutor Code of Conduct and other applicable Read Now policies.
-        </label>
+        <small class="field-hint">Choose one</small>
       </div>
 
-      <div class="checkbox-group">
-        <label>
-          <input type="checkbox" name="Background Check Consent" value="Yes" required>
-          By signing, electronically in this document, I hereby agree to the Read Now Volunteer Tutor Code of Conduct, acknowledge that I have read and have been made fully aware of the expectations set forth herein, and have fully understood that I will be subject to Read Now administrative approval. I understand that this position is voluntary and can be terminated at any time by either Read Now or myself.
-        </label>
+      <div class="form-group">
+        <label for="conduct_consent">By signing, electronically, this document, I hereby agree to the <em>Read Now</em> <a href="code-of-conduct.html">Code of Conduct</a> and I approve background checks prior and subsequent to my acceptance as a <em>Read Now</em> Volunteer Tutor. I understand that my participation in the <em>Read Now</em> program is subject to <em>Read Now</em> administrative approval, which is subject to review at any time. <span class="required">*</span></label>
+        <select id="conduct_consent" name="Code of Conduct and Background Check Consent" required>
+          <option value="">-- Please choose an option --</option>
+          <option value="Yes, I agree">Yes, I agree</option>
+          <option value="No">No</option>
+        </select>
+        <small class="field-hint">Choose one</small>
       </div>
 
       <div class="form-group">
         <label for="signature">Signature <span class="required">*</span></label>
-        <input type="text" id="signature" name="Signature" placeholder="Type your name as signature" required>
+        <input type="text" id="signature" name="Signature" required>
+        <small class="field-hint">Typing your name is the same as electronically signing</small>
       </div>
 
       <div class="form-group">
         <label for="date">Date (MM/DD/YY) <span class="required">*</span></label>
         <input type="text" id="date" name="Date" placeholder="MM/DD/YY" required>
+        <small class="field-hint">Enter a valid date</small>
       </div>
+
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px;" aria-hidden="true">
     </div>
 
     <button type="submit">Submit Application</button>
@@ -234,6 +297,16 @@
   </div>
   <div class="footer-bottom"><div class="knowbility-logo"><p><strong>Accessibility Partner</strong></p><p>Read Now partners with <a href="https://knowbility.org" target="_blank">Knowbility</a> to ensure accessibility.</p></div><p>&copy; 2026 Read Now. All rights reserved.</p></div>
 </footer>
+
+<script>
+  document.querySelectorAll('.char-count').forEach((counter) => {
+    const field = document.getElementById(counter.dataset.for);
+    const update = () => {
+      counter.textContent = (field.maxLength - field.value.length) + ' / ' + field.maxLength + ' characters remaining';
+    };
+    field.addEventListener('input', update);
+  });
+</script>
 
 <script src="script.js"></script>
 

@@ -68,92 +68,154 @@
 
     <div class="form-section">
       <h3>Student Representative Information</h3>
-      <p>If there is anything you would like to add, please note it only in the boxes provided below.</p>
+      <p>If you are a Representative assisting the Student, please complete this section.</p>
 
       <div class="form-group">
-        <label for="representative">Who should Read Now contact? <span class="required">*</span></label>
-        <select id="representative" name="Who to Contact" required>
+        <label for="representative">Who should <em>Read Now</em> contact?</label>
+        <select id="representative" name="Who to Contact">
           <option value="">-- Please choose an option --</option>
-          <option value="Student">The student</option>
-          <option value="Parent/Guardian">Parent or Guardian</option>
+          <option value="The student">The student</option>
+          <option value="Parent or Guardian">Parent or Guardian</option>
           <option value="Other">Other</option>
         </select>
+        <small class="field-hint">Choose one</small>
       </div>
 
       <div class="form-group">
-        <label for="rep_name">Representative Name <span class="required">*</span></label>
-        <input type="text" id="rep_name" name="Representative Name" required>
+        <label for="rep_name">Representative Name</label>
+        <input type="text" id="rep_name" name="Representative Name">
+        <small class="field-hint">Enter your full name</small>
       </div>
 
       <div class="form-group">
-        <label for="home_phone">Home Phone <span class="required">*</span></label>
-        <input type="tel" id="home_phone" name="Home Phone" required>
+        <label for="rep_email">Email</label>
+        <input type="email" id="rep_email" name="Representative Email">
+        <small class="field-hint">Enter a valid email</small>
       </div>
 
       <div class="form-group">
-        <label for="reach_frequency">When is the best day and time to reach you? <span class="required">*</span></label>
-        <select id="reach_frequency" name="Best Time to Reach" required>
+        <label for="rep_phone">Home Phone</label>
+        <input type="tel" id="rep_phone" name="Representative Phone">
+        <small class="field-hint">Enter a valid phone number</small>
+      </div>
+
+      <div class="form-group">
+        <label for="rep_day">When is the best day and time to reach you?</label>
+        <select id="rep_day" name="Representative Best Day" aria-label="Best day to reach you">
           <option value="">-- Please choose an option --</option>
-          <option value="Morning">Morning (8am-12pm)</option>
-          <option value="Afternoon">Afternoon (12pm-5pm)</option>
-          <option value="Evening">Evening (5pm-9pm)</option>
-          <option value="Weekends">Weekends</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
         </select>
+        <small class="field-hint">Choose one</small>
+        <select id="rep_time" name="Representative Best Time" aria-label="Best time to reach you" style="margin-top: 0.5rem;">
+          <option value="">-- Please choose an option --</option>
+          <option value="Morning (8am-12pm)">Morning (8am-12pm)</option>
+          <option value="Afternoon (12pm-5pm)">Afternoon (12pm-5pm)</option>
+          <option value="Evening (5pm-9pm)">Evening (5pm-9pm)</option>
+        </select>
+        <small class="field-hint">Choose one</small>
       </div>
     </div>
 
     <div class="form-section">
       <h3>Prospective Student Application</h3>
-      <p>All fields in this section are required. Please complete these fields.</p>
+      <p><span class="required">*</span> Fields that have an asterisk are required information. Please complete these fields.</p>
 
       <div class="form-group">
         <label for="student_name">Student Name <span class="required">*</span></label>
         <input type="text" id="student_name" name="Student Name" required>
+        <small class="field-hint">Enter your full name</small>
       </div>
 
       <div class="form-group">
-        <label for="firstname_add">If there is anything else you would like to add, please note it below. You may add it here:</label>
-        <textarea id="firstname_add" name="Student Additional Info"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="lastname">I / name <span class="required">*</span></label>
-        <select id="lastname" name="Student Type" required>
+        <label for="timezone">Timezone <span class="required">*</span></label>
+        <select id="timezone" name="Timezone" required>
           <option value="">-- Please choose an option --</option>
-          <option value="Adult">Am an adult seeking reading help</option>
-          <option value="Teen">Am a teenager seeking reading help</option>
-          <option value="Parent">Am a parent seeking help for my child</option>
+          <option value="Central">Central</option>
+          <option value="Eastern">Eastern</option>
+          <option value="Mountain">Mountain</option>
+          <option value="Pacific">Pacific</option>
+          <option value="Other">Other</option>
         </select>
+        <small class="field-hint">Choose one</small>
       </div>
 
       <div class="form-group">
-        <label for="student_phone">Home Phone <span class="required">*</span></label>
-        <input type="tel" id="student_phone" name="Student Phone" required>
+        <label for="student_phone">Home Phone</label>
+        <input type="tel" id="student_phone" name="Student Phone">
+        <small class="field-hint">Enter a valid phone number</small>
       </div>
 
       <div class="form-group">
         <label for="student_email">Email <span class="required">*</span></label>
         <input type="email" id="student_email" name="Student Email" required>
+        <small class="field-hint">Enter a valid email</small>
       </div>
 
       <div class="form-group">
-        <label>I agree to be contacted by Read Now to determine eligibility to become a Read Now student. <span class="required">*</span></label>
-        <div class="checkbox-group">
-          <label>
-            <input type="checkbox" name="Contact Consent" value="Yes" required>
-            Yes, I agree to be contacted
-          </label>
-        </div>
+        <label for="how_found">How did you learn about <em>Read Now</em>?</label>
+        <select id="how_found" name="How Found Read Now">
+          <option value="">-- Please choose an option --</option>
+          <option value="Friend or family">Friend or family</option>
+          <option value="Website">Website</option>
+          <option value="Social media">Social media</option>
+          <option value="Other">Other</option>
+        </select>
+        <small class="field-hint">Choose one</small>
+      </div>
+
+      <div class="form-group">
+        <label for="student_additional">If there is anything you would like to add, you may do so at this time:</label>
+        <textarea id="student_additional" name="Student Additional Info"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="consent">I agree to be contacted by <em>Read Now</em> to determine eligibility to become a <em>Read Now</em> Student. <span class="required">*</span></label>
+        <select id="consent" name="Contact Consent" required>
+          <option value="">-- Please choose an option --</option>
+          <option value="Yes, I agree">Yes, I agree</option>
+          <option value="No">No</option>
+        </select>
+        <small class="field-hint">Choose one</small>
+      </div>
+
+      <div class="form-group">
+        <label for="student_day">When is the best day and time to reach you? <span class="required">*</span></label>
+        <select id="student_day" name="Student Best Day" required aria-label="Best day to reach you">
+          <option value="">-- Please choose an option --</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+        <small class="field-hint">Choose one</small>
+        <select id="student_time" name="Student Best Time" required aria-label="Best time to reach you" style="margin-top: 0.5rem;">
+          <option value="">-- Please choose an option --</option>
+          <option value="Morning (8am-12pm)">Morning (8am-12pm)</option>
+          <option value="Afternoon (12pm-5pm)">Afternoon (12pm-5pm)</option>
+          <option value="Evening (5pm-9pm)">Evening (5pm-9pm)</option>
+        </select>
+        <small class="field-hint">Choose one</small>
       </div>
 
       <div class="form-group">
         <label for="signature">Signature <span class="required">*</span></label>
-        <input type="text" id="signature" name="Signature" placeholder="Type your name as signature" required>
+        <input type="text" id="signature" name="Signature" required>
+        <small class="field-hint">Typing your name is the same as electronically signing</small>
       </div>
 
       <div class="form-group">
         <label for="date">Date (MM/DD/YY) <span class="required">*</span></label>
         <input type="text" id="date" name="Date" placeholder="MM/DD/YY" required>
+        <small class="field-hint">Enter a valid date</small>
       </div>
     </div>
 
