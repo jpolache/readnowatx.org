@@ -145,28 +145,41 @@ nav ul ul a {
 /* Hero Section */
 .hero {
   background-color: var(--primary);
+  background-image: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  margin: 0;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-bottom: 4px solid var(--accent);
+}
+
+.hero .container {
+  padding: 0;
+}
+
+/* Homepage banner: the image carries its own logo and text, so no heading goes on top */
+.hero-banner {
   background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
     url('images/RN-banner2.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: var(--white);
-  padding: 4rem 1rem;
-  text-align: center;
-  border-bottom: 4px solid var(--accent);
+  padding: 6rem 1rem;
 }
 
 .hero h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .hero p {
   font-size: 1.1rem;
-  margin-bottom: 2rem;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+}
+
+.hero + .container > section:first-child {
+  margin-top: 0;
 }
 
 /* Sections */
@@ -412,9 +425,15 @@ footer {
   margin-bottom: 1rem;
 }
 
+.footer-contact a {
+  display: inline;
+  margin-bottom: 0;
+}
+
 .footer-contact img {
   height: 20px;
   width: auto;
+  vertical-align: middle;
 }
 
 .footer-bottom {
