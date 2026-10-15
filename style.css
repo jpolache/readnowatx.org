@@ -82,6 +82,16 @@ nav a:hover {
   color: var(--primary);
 }
 
+nav a[aria-current="page"] {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+nav a.donate-btn[aria-current="page"] {
+  color: var(--white);
+}
+
 /* Dropdowns */
 nav ul ul {
   display: none;
@@ -170,6 +180,16 @@ section h2 {
   margin-bottom: 1.5rem;
   border-bottom: 3px solid var(--accent);
   padding-bottom: 0.5rem;
+}
+
+.donate-intro {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.donate-tax {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
 }
 
 section h3 {

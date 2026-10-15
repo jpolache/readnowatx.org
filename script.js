@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Mark the current page's nav link (header.html is shared, so this can't be hardcoded)
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('#mainNav a').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+
   // Close mobile nav when clicking outside
   document.addEventListener('click', function(e) {
     if (mainNav && !e.target.closest('header')) {
