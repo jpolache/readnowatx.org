@@ -5,18 +5,21 @@ redeploys automatically (~1-2 min).
 
 ## One-time setup
 
-Enable the repo's tracked git hooks (keeps the shared header in sync on commit):
+Enable the repo's tracked git hooks (keeps the shared header and footer in sync on commit):
 
     git config core.hooksPath hooks
 
-## Shared header
+## Shared header and footer
 
-Every page's `<header>...</header>` is generated from [header.html](header.html).
-To change the nav/logo across the whole site, edit `header.html` only, then
-commit as usual — the `pre-commit` hook runs `scripts/sync-header.js`
-automatically and stages the updated pages for you. To sync manually instead:
+Every page's `<header>...</header>` is generated from [header.html](header.html),
+and every page's `<footer>...</footer>` from [footer.html](footer.html).
+To change the nav/logo or footer across the whole site, edit `header.html` or
+`footer.html` only, then commit as usual — the `pre-commit` hook runs
+`scripts/sync-partials.js` automatically and stages the updated pages for you.
+Edits made directly inside a page's `<header>` or `<footer>` are overwritten.
+To sync manually instead (e.g. to preview before committing):
 
-    node scripts/sync-header.js
+    node scripts/sync-partials.js
 
 ## Make a change
 

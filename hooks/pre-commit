@@ -1,8 +1,8 @@
 #!/bin/sh
-# Keeps every page's <header> in sync with header.html before each commit.
+# Keeps every page's <header> and <footer> in sync with header.html and footer.html before each commit.
 # Enabled once per clone via: git config core.hooksPath hooks
 
-node scripts/sync-header.js || exit 1
+node scripts/sync-partials.js || exit 1
 
 changed=$(git diff --name-only -- '*.html')
 if [ -n "$changed" ]; then
